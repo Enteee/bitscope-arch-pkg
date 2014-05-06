@@ -7,7 +7,7 @@
 WORK_DIR := $(shell pwd)
 TOPLEVEL := $(shell git rev-parse --show-toplevel)
 REMOTE_C := $(shell git remote | wc -l)
-MODULES := dso logic chart meter bitscope
+MODULES := dso logic meter chart bitscope
 
 #PROGRAMS
 MAKEPKG := makepkg
