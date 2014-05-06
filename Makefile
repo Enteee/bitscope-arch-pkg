@@ -42,6 +42,7 @@ pkg: init
 
 .PHONY: clean 
 clean:
+	git clean -f -d
 
 .PHONY: install
 install: pkg
