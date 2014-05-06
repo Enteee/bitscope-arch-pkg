@@ -4,7 +4,7 @@
 pkgname="bitscope-chart"
 pkgver="__CHARTVERSION__"
 pkgrel=__CHARTREL__
-pkgdesc="Bitscope chart  software for oscilloscopes"
+pkgdesc="Bitscope chart software for oscilloscopes"
 arch=('i686' 'x86_64')
 url="http://www.bitscope.com"
 license=('custom')
@@ -19,7 +19,7 @@ else
 fi
 
 _CHARTPKG="bitscope-chart_${pkgver}_${_BITSCOPEARCH}.deb"
-source=("http://www.bitscope.com/download/files/${_DSOPKG}")
+source=("http://www.bitscope.com/download/files/${_CHARTPKG}")
 sha1sums=("${_BITSCOPESHA1}")
 
 package() {
