@@ -1,0 +1,19 @@
+# Maintainer : EnteEnteEnte <ducksource@duckpond.ch>
+# vim: set ts=2 sw=2 et:
+
+pkgname="bitscope-__NAME__"
+pkgver="__VERSION__"
+pkgrel=__REL__
+pkgdesc="Bitscope __NAME__ software for oscilloscopes"
+arch=('i686' 'x86_64')
+url="http://www.bitscope.com"
+license=('custom')
+depends=(atk gdk-pixbuf2 gtk2 pango cairo)
+
+_DSOPKG="http://www.bitscope.com/download/files/bitscope-__NAME___${pkgver}"
+source_x86_64=("${_DSOPKG}_amd64.deb")
+source_i686=("${_DSOPKG}_i386.deb")
+
+package() {
+   tar -xzf "${srcdir}/data.tar.gz" -C "${pkgdir}"
+}

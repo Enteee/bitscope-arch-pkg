@@ -3,21 +3,16 @@
 # Mischa Lehmann <ducksource@duckpond.ch>
 # vim: set noexpandtab list:
 
-include include.mk
+include vars.mk
 
 .DEFAULT_GOAL = all
 
-.PHONY: all
-all: TARGET ?= module
-all: $(MODULES)
-
-.PHONY: clean 
-clean: TARGET ?= clean
-clean: $(MODULES)
+.PHONY: all clean install
+all clean install: $(MODULES)
 
 .PHONY: $(MODULES)
 $(MODULES):
-	$(MAKE) $(TARGET) \
+	$(MAKE) $(MAKECMDGOALS) \
 	--directory=$@
 
 
