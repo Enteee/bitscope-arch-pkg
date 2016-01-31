@@ -7,7 +7,8 @@
 WORK_DIR := $(shell pwd)
 TOPLEVEL := $(shell git rev-parse --show-toplevel)
 REMOTE_C := $(shell git remote | wc -l)
-MODULES := dso logic meter chart server bitscope
+MODULES := dso 
+#logic meter chart server bitscope
 
 #PROGRAMS
 MAKEPKG := makepkg
@@ -37,6 +38,7 @@ init:
 pkg: init
 	for module in $(MODULES) ; do \
 	  cd $(TOPLEVEL)/$${module} ;\
+	  updpkgsums ;\
 	  $(MAKEPKG) -f -S ;\
 	done
 

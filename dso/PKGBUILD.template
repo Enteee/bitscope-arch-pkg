@@ -10,17 +10,9 @@ url="http://www.bitscope.com"
 license=('custom')
 depends=(atk gdk-pixbuf2 gtk2 pango cairo)
 
-if [ "${CARCH}" == "x86_64" ]; then
-    _BITSCOPEARCH='amd64'
-    _BITSCOPESHA1='__DSO64SHA1__'
-else
-    _BITSCOPEARCH='i386'
-    _BITSCOPESHA1='__DSO32SHA1__'
-fi
-
-_DSOPKG="bitscope-dso_${pkgver}_${_BITSCOPEARCH}.deb"
-source=("http://www.bitscope.com/download/files/${_DSOPKG}")
-sha1sums=("${_BITSCOPESHA1}")
+_DSOPKG="http://www.bitscope.com/download/files/bitscope-dso_${pkgver}"
+source_x86_64=("${_DSOPKG}_amd64.deb")
+source_i686=("${_DSOPKG}_i386.deb")
 
 package() {
    tar -xzf "${srcdir}/data.tar.gz" -C "${pkgdir}"

@@ -3,12 +3,12 @@
 
 pkgname="bitscope"
 pkgver="1"
-pkgrel=1
+pkgrel=2
 pkgdesc="Full bitscope software package for oscilloscopes"
 arch=('i686' 'x86_64')
 url="http://www.bitscope.com"
 license=('custom')
-depends=(bitscope-dso bitscope-logic bitscope-meter bitscope-chart)
+depends=(bitscope-dso bitscope-logic bitscope-meter bitscope-chart bitscope-server)
 
 package() {
  echo "do nothing" > /dev/null
