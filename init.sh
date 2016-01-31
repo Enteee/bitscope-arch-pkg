@@ -8,14 +8,14 @@ OUTPUT_STRING_LEN=20
 
 #Used files/directories
 DIR_CALLDIR="$(pwd)"
-DIR_ARG="${1}/"
-VARIABLE_CONFIG_FILE="${DIR_ARG}/vars.sh"
+DIR_TOPLEVEL="${1}"
+VARIABLE_CONFIG_FILE="vars.sh"
 
 #Metadata
 VARIABLE_DECLARATION=""
 
 #Intial tools
-INIT_TOOLS="${DIR_ARG}/tools/"
+INIT_TOOLS="${DIR_TOPLEVEL}/tools/"
 AWESOMEREPLACE="${INIT_TOOLS}/awesomereplace"
 SPONGE="${INIT_TOOLS}/sponge"
 

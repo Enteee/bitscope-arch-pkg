@@ -12,5 +12,4 @@ depends=(bitscope-dso bitscope-logic bitscope-meter bitscope-chart bitscope-serv
 
 package() {
  echo "do nothing" > /dev/null
- 
 }
