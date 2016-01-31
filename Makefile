@@ -8,7 +8,7 @@ include include.mk
 .DEFAULT_GOAL = all
 
 .PHONY: all
-all: TARGET ?= all
+all: TARGET ?= module
 all: $(MODULES)
 
 .PHONY: clean 
