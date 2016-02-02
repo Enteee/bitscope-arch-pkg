@@ -23,13 +23,14 @@ pkg:
 	cp "$(TEMPLATE)" "PKGBUILD" ;\
 	replaceVars "PKGBUILD" ;\
 	updpkgsums ;\
+	mksrcinfo
 	$(MAKEPKG) -f -S
 
 .PHONY: intall
 install: pkg
 	$(MAKEPKG) -f ;\
 	source vars.sh ;\
-	sudo pacman -U bitscope-$(MODULE_NAME)-$${VERSION}-$${REL}-*.tar.xz
+	sudo pacman -U *$(MODULE_NAME)-$${VERSION}-$${REL}-*.tar.xz
 
 
 .PHONY: clean 
@@ -39,5 +40,6 @@ clean:
 	       *.deb \
 	       *.tar.gz \
 	       *.tar.xz \
-	       PKGBUILD
+	       PKGBUILD \
+	       .SRCINFO
 
