@@ -1,3 +1,6 @@
 [submodule "bitscope"]
 	path = bitscope
 	url = ssh://aur@aur.archlinux.org/bitscope.git
+[submodule "chart"]
+	path = chart
+	url = ssh://aur@aur.archlinux.org/bitscope-chart.git
