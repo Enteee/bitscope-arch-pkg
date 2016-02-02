@@ -9,7 +9,6 @@ OUTPUT_STRING_LEN=20
 #Used files/directories
 DIR_CALLDIR="$(pwd)"
 DIR_TOPLEVEL="${1}"
-VARIABLE_CONFIG_FILE="vars.sh"
 
 #Metadata
 VARIABLE_DECLARATION=""
@@ -53,15 +52,6 @@ function printVars(){
 }
 
 function defineVars(){
-    echo "=== Defining variables ==="
-    echo "Please define variables in: ${VARIABLE_CONFIG_FILE}"
-    echo "[ENTER]"
-    #read
-    #vim "${VARIABLE_CONFIG_FILE}"
-
-    echo "=== Sourcing variables file ==="
-    source "${VARIABLE_CONFIG_FILE}"
-
     echo "=== Load variabels ==="
     newlineIFS
     VARIABLE_DECLARATION=""

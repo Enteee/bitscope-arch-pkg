@@ -3,7 +3,7 @@
 # Mischa Lehmann <ducksource@duckpond.ch>
 # vim: set noexpandtab list:
 
-TOPLEVEL := $(shell git rev-parse --show-toplevel)
+TOPLEVEL ?= $(shell git rev-parse --show-toplevel)
 include $(TOPLEVEL)/vars.mk
 
 .PHONY: all
@@ -29,9 +29,12 @@ pkg:
 .PHONY: intall
 install: pkg
 	$(MAKEPKG) -f ;\
-	source vars.sh ;\
-	sudo pacman -U *$(MODULE_NAME)-$${VERSION}-$${REL}-*.tar.xz
+	sudo pacman -U *$(MODULE_NAME)-$(VERSION)-$(REL)-*.tar.xz
 
+.PHONY: release
+release: pkg
+	git commit -a -m "Release $(VERSION)-$(REL) @ $(DATE)"
+	git push
 
 .PHONY: clean 
 clean:

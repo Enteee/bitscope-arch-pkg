@@ -4,13 +4,14 @@
 # vim: set noexpandtab list:
 
 #Variables
-WORK_DIR := $(shell pwd)
-REMOTE_C := $(shell git remote | wc -l)
-TEMPLATE := $(TOPLEVEL)/PKGBUILD.template
-MODULES := dso logic meter chart server bitscope
-MODULE_NAME := $(basename $(notdir $(WORK_DIR)))
-INIT.SH := $(TOPLEVEL)/init.sh
+WORK_DIR ?= $(shell pwd)
+DATE ?= $(shell date -u)
+REMOTE_C ?= $(shell git remote | wc -l)
+TEMPLATE ?= $(TOPLEVEL)/PKGBUILD.template
+MODULES ?= dso logic meter chart server bitscope
+MODULE_NAME ?= $(basename $(notdir $(WORK_DIR)))
+INIT.SH ?= $(TOPLEVEL)/init.sh
 
 #PROGRAMS
-MAKEPKG := makepkg
+MAKEPKG ?= makepkg
 
